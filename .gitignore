@@ -4,10 +4,13 @@
 node_modules/
 platforms/
 plugins/
+*.min.js
+*.min.js.map
+*.min.css
+*.min.css.map
 
 npm-debug.log
 
 # Don't ignore the files below
 
 !platforms/android/AndroidManifest.xml
-
