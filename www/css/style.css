@@ -105,7 +105,46 @@ font-size:15px;
 .darkSide .item-complex .item-content,.darkSide .item-radio .item-content {
 background-color: rgba(33,37,43,1);
 }
+/*--------------*/
 
 .text-light{
 color: #FFF !important;
+}
+
+.border-bottom {
+border-bottom: none !important;
+}
+
+.account{
+background: linear-gradient(0deg, #FBFBFB 50%, #0075B2 50%);
+}
+
+#profile-photo{
+border-radius: 50%;
+max-height: 23vh;
+display: block;
+margin: 0 auto;
+border: 0px solid #FBFBFB;
+border-bottom: #0075B2 !important;
+}
+
+#font-head-large{
+text-align: center;
+font-size: 7vw;
+color:#202a36;
+}
+
+#font-head-small{
+text-align: center;
+font-size: 4vw;
+color:#202a36;
+}
+
+.no-border {
+border: 0px, 0px, 0px, 0px !important;
+border-color: white;
+}
+
+.about {
+text-align: justify;
 }

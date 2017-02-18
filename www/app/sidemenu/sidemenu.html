@@ -13,28 +13,15 @@
   </ion-side-menu-content>
 
   <ion-side-menu side="left" width="230">
-<!--     <ion-header-bar class="bar-calm">
-      <h1 class="title">Left</h1>
-    </ion-header-bar> -->
-
     <ion-content class="darkSide">
     <h1 class="title"> <img ng-src="img/goals.png" style="width: 100%"></h1>
       <ion-item nav-clear menu-close href="#/app/account" class="item-avatar">
       <ionic-letter-avatar data="Viktor" shape="round" charcount="2"></ionic-letter-avatar>
       <h4 class="text-light">Viktor Dela Cruz <br>viktormdelacruz</h4>
       <h5 class="text-light">Programmer</h5></ion-item>
-      <ion-item nav-clear menu-close href="#/app/account" class="item-icon item-icon-left"><i class="icon ion-android-person"></i> My Account</ion-item>
-      <ion-item nav-clear menu-close href="#/app/about" class="item-icon item-icon-left"><i class="icon ion-android-bulb"></i> About the App</ion-item>
-      <ion-item nav-clear menu-close href="#/app/settings" class="item-icon item-icon-left"><i class="icon ion-android-settings"></i> Settings</ion-item>
-      <!-- <h1 class="title"> <img ng-src="img/ebayanihan-logo-white.png" style="width: 100%"></h1>
-      <ion-item nav-clear menu-close href="#/app/account" class="item-avatar"><ionic-letter-avatar data="{{firstname}}" shape="round" charcount="2"></ionic-letter-avatar><h4 class="text-light">{{firstname}} {{lastname}} {{user.name}}</h4><h5 class="text-light">Citizen Volunteer</h5></ion-item>
-      <ion-item nav-clear menu-close href="#/app/report" class="item-icon item-icon-left"><i class="icon ion-social-rss"></i> Latest Feeds </ion-item>
-      <ion-item nav-clear menu-close href="#/app/twitter" class="item-icon item-icon-left"><i class="icon ion-social-twitter"></i> Government Feeds</ion-item>
-      <ion-item nav-clear menu-close href="#/app/map" class="item-icon item-icon-left"><i class="icon ion-android-compass"></i>Map & Tracker</ion-item>
-      <ion-item nav-clear menu-close href="#/app/help" class="item-icon item-icon-left"><i class="icon ion-help-buoy"></i> Emergency</ion-item>
-      <ion-item nav-clear menu-close href="#/app/account" class="item-icon item-icon-left"><i class="icon ion-android-person"></i> My Account</ion-item>
-      <ion-item nav-clear menu-close href="#/app/about" class="item-icon item-icon-left"><i class="icon ion-android-bulb"></i> About the App</ion-item>
-      <ion-item nav-clear menu-close href="#/app/settings" class="item-icon item-icon-left"><i class="icon ion-android-settings"></i> Settings</ion-item> -->
+      <ion-item nav-clear menu-close ui-sref="sidemenu.home" class="item-icon item-icon-left"><i class="icon ion-aperture"></i> Goals</ion-item>
+      <ion-item nav-clear menu-close ui-sref="sidemenu.account" class="item-icon item-icon-left"><i class="icon ion-android-person"></i> My Account</ion-item>
+      <ion-item nav-clear menu-close ui-sref="sidemenu.about" class="item-icon item-icon-left"><i class="icon ion-android-bulb"></i> About the App</ion-item>
     </ion-content>
   </ion-side-menu>
 </ion-side-menus>
