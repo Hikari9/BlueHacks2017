@@ -1,7 +1,11 @@
-<ion-view view-title="Duterte Youth">
-  <div id="fake-street"></div>
+<ion-view id="landing-page-view" view-title="Sustainable Development Goals 2017">
   <ion-content id="landing-page-content" padding="true" scroll="false">
     <div id="landing-page-row">
+      <div>
+        <div class="list">
+          <img src="img/Sustainable.png" class="col col-100">
+          <img src="img/Goals.png" class="col col-100">
+        </div>
         <div class="list list-inset">
              <label class="item item-input">
                  <input type="text" placeholder="Username" ng-model="data.username">
@@ -12,7 +16,7 @@
          </div>
          <button class="button button-block button-energized" ng-click="register()">Register</button>
          <button class="button button-block button-calm" ng-click="login()">Login</button>
+       </div>
      </div>
-</ion-content>
-
+   </ion-content>
 </ion-view>
