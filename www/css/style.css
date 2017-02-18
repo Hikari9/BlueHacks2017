@@ -1,59 +1,68 @@
 #home-content-area {
   margin-left: 5%;
   margin-right: 5%;
-  margin-top: 2%;
-}
-
-.tiles {
-  display: inline-flex;
-  flex-direction: row;
+  margin-top: 5%;
   align-items: center;
-  /*margin: auto;*/
+  text-align: center;
+  margin: 2% auto !important;
 }
 
-.tile {
-  color: #fff;
-  margin: auto;
-  margin: -1vw 1vw;
-  transition: all 0.5s ease-out;
+#fake-street {
+  width: 100%;
+  height: auto;
+  display: block;
+
 }
 
-.tile.tile-show {
-  height: 27.5vw;
-  width: 27.5vw;
+h1 {
+  font-family: "Montserrat", sans-serif;
 }
+
+.tile-tabs.col {
+  height: 400px;
+}
+
+#landing-page-content {
+  background-image: url("../img/landing-bg.jpg");
+  opacity: 0.6;
+}
+
+.current-description {
+  display:inline-block;
+  text-align: center;
+  vertical-align: top;
+}
+
 
 @media (orientation: landscape){
-  .tile {
-    margin: 0vw 1vw;
-  }
-  .tile.tile-show {
-    height: 16vw;
-    width: 16vw;
+  #landing-page-row {
+    display: block;
+    margin: 30%;
   }
 }
 
-/* ito yung tile na naclick na puta */
-.tile.tile-current {
-  height: 30vw;
-  width: 30vw;
+/*-- Side Menu CSS --*/
+.darkSide {
+background-color: rgba(33,37,43,1);
+color:#333333;
 }
 
-.tile.tile-hide {
-  height: 0vw;
-  width: 0vw;
-  margin: 0vw;
+.darkSide .item {
+border:none;
+color:#fff;
+font-size:15px;
 }
 
-.tile:hover {
-  opacity: 0.5;
+.darkSide .item-complex .item-content,.darkSide .item-radio .item-content {
+background-color: rgba(33,37,43,1);
 }
+
+.text-light{
+color: #FFF !important;
+}
+
 .tile-double {
   height: 200px;
-}
-.tile + .tile {
-  margin-top: 10px;
-  height: 90px;
 }
 .tile-icon {
   padding: 0;
@@ -64,6 +73,7 @@
 .tile-title {
   position: relative;
   text-align: center;
+  height: 100%;
 }
 .tile-title > h1 {
   font-family: 'Lato', sans-serif;
@@ -74,7 +84,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  color: #fff;
   margin: 0;
 }
 .tile-image {
