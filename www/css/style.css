@@ -13,19 +13,36 @@
 
 .tile {
   color: #fff;
-  height: 27.5vw !important;
-  width: 27.5vw;
   margin: auto;
   margin: -1vw 1vw;
+  transition: all 0.5s ease-out;
+}
+
+.tile.tile-show {
+  height: 27.5vw;
+  width: 27.5vw;
 }
 
 @media (orientation: landscape){
   .tile {
-    height: 16vw !important;
-    width: 16vw;
     margin: 0vw 1vw;
   }
+  .tile.tile-show {
+    height: 16vw;
+    width: 16vw;
+  }
+}
 
+/* ito yung tile na naclick na puta */
+.tile.tile-current {
+  height: 30vw;
+  width: 30vw;
+}
+
+.tile.tile-hide {
+  height: 0vw;
+  width: 0vw;
+  margin: 0vw;
 }
 
 .tile:hover {
@@ -65,6 +82,7 @@
   background-size: cover;
   background-position: bottom;
 }
+
 @media (min-width: 432px) {
   .tile {
     -webkit-transition: all linear .5s;

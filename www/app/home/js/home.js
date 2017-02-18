@@ -1,12 +1,26 @@
 angular.module('bluehacks.homecontrollers', [])
 
 .controller('HomeCtrl', function($scope) {
+  $scope.$on('$ionicView.enter', function() {
+    $scope.current = null;
+  });
   function createTile(index) {
     return {
       url: '../img/' + index + '.png',
-      click: function(tile) {
-        // TODO: what happens when I click this tile
-        console.log("clicked!");
+      getClass: function() {
+        if ($scope.current == null) {
+          return "tile-show";
+        } else if ($scope.current != this) {
+          return "tile-hide";
+        } else {
+          return "tile-current";
+        }
+      },
+      click: function() {
+        if ($scope.current == null)
+          $scope.current = this;
+        else
+          $scope.current = null;
       }
     };
   };
