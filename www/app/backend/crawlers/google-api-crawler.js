@@ -1,4 +1,4 @@
-angular.module('bluehacks.backend.crawlers')
+angular.module('bluehacks.backend')
 
 .service('GoogleApiCrawlerService', function($scope, HttpService) {
   var baseUrl = "http://localhost:3000/api/apps/";

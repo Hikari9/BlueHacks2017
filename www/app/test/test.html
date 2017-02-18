@@ -1,0 +1,9 @@
+<ion-view view-title="Test">
+  <ion-content padding="true">
+    <input type="search" ng-model="data.keyword">
+    <ion-button class="button button-positive" ng-click="ctrl.search()">Search</ion-button>
+    <div>
+      {{ ctrl.results || "Empty" }}
+    </div>
+  </ion-content>
+</ion-view>

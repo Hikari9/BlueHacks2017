@@ -1,4 +1,4 @@
-angular.module('bluehacks.backend.services')
+angular.module('bluehacks.backend')
 
 .service('HttpService', function($scope, $q, $http) {
   return {
@@ -20,22 +20,4 @@ angular.module('bluehacks.backend.services')
       return deferred.promise;
     }
   };
-})
-
-
-.config(function HTTPConfig($httpProvider) {
-  // intercept $http get
-  // don't use application/json
-  $httpProvider.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
-  $httpProvider.defaults.transformRequest.unshift(function(data) {
-    // encode JSON data upon request
-    var key, result = [];
-    if (typeof data === "string")
-      return data;
-    for (key in data)
-      if (data.hasOwnProperty(key))
-        result.push(encodeURIComponent(key) + "=" + encodeURIComponent(data[key]));
-    return result.join("&");
-  });
-
 });
