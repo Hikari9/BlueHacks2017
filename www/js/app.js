@@ -9,6 +9,8 @@ angular.module('bluehacks',
   'bluehacks.homecontrollers',
   'bluehacks.sidemenucontrollers',
   'bluehacks.backend',
+  'bluehacks.landingcontrollers',
+  'bluehacks.registercontrollers'
   ])
 
 .run(function($ionicPlatform) {
@@ -47,6 +49,18 @@ angular.module('bluehacks',
     }
   })
 
+  .state('landing', {
+    url: '/landing',
+    templateUrl: 'app/landing/landing.html',
+    controller: 'LandingCtrl'
+  })
+
+  .state('register', {
+    url: '/registeruser',
+    templateUrl: 'app/register/register.html',
+    controller: 'RegisterCtrl'
+  })
+
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/sidemenu/home');
+  $urlRouterProvider.otherwise('/landing');
 });
