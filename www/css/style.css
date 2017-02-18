@@ -39,6 +39,29 @@ h1 {
     display: block;
     margin: 30%;
   }
+
+  #account-details #font-head-large {
+    margin-left: 30%;
+    margin-right: 30%;
+    font-size: 2vw;
+  }
+
+  #account-details #font-head-small {
+    margin-left: 30%;
+    margin-right: 30%;
+    font-size: 2vw;
+  }
+
+  #account-details-extend {
+    margin-top: 5%;
+  }
+
+  #account-details-extend .item {
+    margin-left: 30%;
+    margin-right: 30%;
+  }
+
+
 }
 
 /*-- Side Menu CSS --*/
