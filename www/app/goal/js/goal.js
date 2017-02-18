@@ -19,7 +19,10 @@ angular.module('bluehacks.goalcontroller', [])
 		// load data in async
 		DataLoadingService.loadFbPages($scope.data, $scope.tabs.fbPage);
 		DataLoadingService.loadKickstarterCharities($scope.data, $scope.tabs.kickstarterCharities);
-		DataLoadingService.loadPlayStoreApps($scope.data, $scope.tabs.playStoreApps);
+		DataLoadingService.loadPlayStoreApps($scope.data, $scope.tabs.playStoreApps)
+		.then(function() {
+			console.log($scope.tabs);
+		});
 		DataLoadingService.loadCommunityFeats($scope.data, $scope.tabs.communityFeats);
 	});
 

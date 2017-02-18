@@ -1,31 +1,30 @@
 <ion-view view-title="Goal">
-	<ion-content>
-      <ion-tabs class="tabs-balanced tabs-top tabs-striped relative">
-          <ion-tab title="Movements">
-            <ion-tab-header></ion-tab-header>
-            <ion-content class="has-header">
+
+			<ion-item class="item-thumbnail-left item item-stable item-with-margin">
+				<img src={{data.url}}>
+				<h1 class="title ng-binding">{{data.name}}</h1>
+			</ion-item>
+      <ion-tabs class="tabs-clear tabs-top tabs-striped relative no-border">
+          <ion-tab title="Movements" has-header>
+            <ion-content class="item" padding="false" has-tabs>
 							List of fb pages. Use ng-repeat in list.
 							<ion-list class="list" ng-repeat="page in tabs.fbPages">
-								<!-- put page view here -->
 								<ion-item>
 								</ion-item>
 							</ion-list>
             </ion-content>
           </ion-tab>
-          <ion-tab title="Charities">
-            <ion-tab-header></ion-tab-header>
-            <ion-content class="has-header">
+          <ion-tab title="Charities" has-header>
+            <ion-content class="item" padding="false" has-tabs>
               List of kickstarter charities. Use ng-repeat in list.
 							<ion-list class="list" ng-repeat="charity in tabs.kickstarterCharities">
 								<ion-item>
-									<!-- put charity view here -->
 								</ion-item>
 							</ion-list>
             </ion-content>
           </ion-tab>
-          <ion-tab title="Applications">
-            <ion-tab-header></ion-tab-header>
-            <ion-content class="has-header">
+          <ion-tab title="Applications" has-header>
+            <ion-content class="item" padding="false" has-tabs>
               List of play store/appstore apps. Use ng-repeat in list.
 							<ion-list class="list" ng-repeat="app in tabs.playStoreApps">
 								<ion-item class="item item-card">
@@ -37,30 +36,22 @@
 									    This is a Ionic card with item-text-wrap class.
 									  </div>
 									</div>
-									<!-- put app view here -->
 								</ion-item>
 							</ion-list>
             </ion-content>
           </ion-tab>
-          <ion-tab title="Community">
-            <ion-tab-header></ion-tab-header>
-            <ion-content class="has-header">
+          <ion-tab title="Community" has-header>
+            <ion-content class="item" padding="false" has-tabs>
               List of community feats. Use ng-repeat in list.
 							<ion-list class="list" ng-repeat="feat in tabs.communityFeats">
 								<ion-item>
-									<!-- put feat view here -->
 								</ion-item>
 							</ion-list>
             </ion-content>
           </ion-tab>
         </ion-tabs>
-	</ion-content>
 
-	<ion-item class="item-thumbnail-left item item-stable item-with-margin">
-        <img src={{data.url}}>
-        <h1 class="title ng-binding">{{data.name}}</h1>
-     </ion-item>
-	 -->
+
 	<!-- <div class="current-description">
         <h1>{{ data.name }}</h1>
       </div> -->

@@ -11,7 +11,6 @@ angular.module('bluehacks.backend')
 	};
 
 	function loadPlayStoreApps(model, resultsCollection) {
-    /*
     var keywords = model.name; // first layer
     console.log("Keywords: " + keywords);
     return GoogleApiCrawlerService.query({
@@ -33,7 +32,6 @@ angular.module('bluehacks.backend')
         console.log("Received google store app", data);
       });
     });
-    */
 	};
 
 	function loadCommunityFeats(model, results) {

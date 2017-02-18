@@ -191,10 +191,11 @@ border-color: white;
 text-align: justify;
 }
 
-.relative{
-  .tabs,
-  .scroll-content{
-    position: relative; 
-    top:auto;
-  }
+/*
+.static {
+  position: relative;
 }
+
+.static > .scroll {
+}
+*/
