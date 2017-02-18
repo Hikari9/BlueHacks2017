@@ -2,104 +2,13 @@
   <ion-content>
     <div id="home-content-area">
       <div class="tiles list" ng-repeat="tile in tiles">
-        <div class="tile balanced-bg tile-image" style="background-image: url({{ tile.url }})" ng-click="tile.click(tile)"></div>
-      </div>
-    </div>
-      <!--
-    <div class="row">
-      <div class="col col-20">
-        <div class="tile balanced-bg tile-image" style="background-image: url(../img/1.png)"></div>
-      </div>
-
-      <div class="col col-20">
-        <div class="tile positive-bg tile-image" style="background-image: url(../img/2.png)">
-
+        <div
+          ng-class="tile.getClass()"
+          class="tile balanced-bg tile-image"
+          style="background-image: url({{ tile.url }})"
+          ng-click="tile.click()">
         </div>
       </div>
-
-      <div class="col col-20">
-      <div class="tile royal-bg tile-image" style="background-image: url(../img/3.png)"></div>
     </div>
-
-    <div class="col col-20">
-    <div class="tile royal-bg tile-image" style="background-image: url(../img/4.png)"></div>
-  </div>
-
-  <div class="col col-20">
-    <div class="tile royal-bg tile-image" style="background-image: url(../img/5.png)"></div>
-  </div>
-
-
-
-    </div>
-
-    <div class="row">
-      <div class="col col-20">
-      <div class="tile royal-bg tile-image" style="background-image: url(../img/6.png)"></div>
-    </div>
-
-    <div class="col col-20">
-    <div class="tile royal-bg tile-image" style="background-image: url(../img/7.png)"></div>
-  </div>
-
-  <div class="col col-20">
-    <div class="tile royal-bg tile-image" style="background-image: url(../img/8.png)"></div>
-  </div>
-
-  <div class="col col-20">
-    <div class="tile royal-bg tile-image" style="background-image: url(../img/9.png)"></div>
-  </div>
-
-  <div class="col col-20">
-    <div class="tile royal-bg tile-image" style="background-image: url(../img/10.png)"></div>
-  </div>
-    </div>
-
-    <div class="row">
-      <div class="col col-20">
-      <div class="tile royal-bg tile-image" style="background-image: url(../img/11.png)"></div>
-    </div>
-
-    <div class="col col-20">
-      <div class="tile royal-bg tile-image" style="background-image: url(../img/12.png)"></div>
-    </div>
-
-    <div class="col col-20">
-    <div class="tile royal-bg tile-image" style="background-image: url(../img/13.png)"></div>
-  </div>
-
-  <div class="col col-20">
-    <div class="tile royal-bg tile-image" style="background-image: url(../img/14.png)"></div>
-  </div>
-
-  <div class="col col-20">
-    <div class="tile royal-bg tile-image" style="background-image: url(../img/15.png)"></div>
-  </div>
-    </div>
-
-    <div class="row">
-      <div class="col col-20">
-        <div class="tile royal-bg tile-image" style="background-image: url(../img/16.png)"></div>
-      </div>
-
-    <div class="col col-20">
-      <div class="tile royal-bg tile-image" style="background-image: url(../img/17.png)"></div>
-    </div>
-
-    <div class="col col-20">
-      <div class="tile royal-bg tile-image" style="background-image: url(../img/18.png)"></div>
-    </div>
-
-    <div class="col col-20">
-    <div class="tile royal-bg tile-title">
-      <h1>Wa</h1></div>
-  </div>
-
-  <div class="col col-20">
-  <div class="tile royal-bg tile-title">
-    <h1>Wa</h1></div>
-</div>
-    </div>
-</div>-->
   </ion-content>
 </ion-view>
