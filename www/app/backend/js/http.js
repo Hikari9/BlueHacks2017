@@ -9,9 +9,10 @@ angular.module('bluehacks.backend')
     return result.join('&');
   };
   function get(url, data, timeout) {
+    var requestURI = url + '?' + dataToURI(data);
     var deferred = $q.defer();
     $http({
-      url: url + '?' + dataToURI(data),
+      url: requestURI,
       method: 'GET',
       timeout: timeout || 7500
     }).then(function(result) {

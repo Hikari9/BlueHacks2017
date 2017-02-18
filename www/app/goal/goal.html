@@ -5,7 +5,7 @@
             <ion-tab-header></ion-tab-header>
             <ion-content class="has-header">
 							List of fb pages. Use ng-repeat in list.
-							<ion-list class="list" ng-repeat="page in data.fbPages">
+							<ion-list class="list" ng-repeat="page in tabs.fbPages">
 								<ion-item>
 									<!-- put page view here -->
 								</ion-item>
@@ -16,7 +16,7 @@
             <ion-tab-header></ion-tab-header>
             <ion-content class="has-header">
               List of kickstarter charities. Use ng-repeat in list.
-							<ion-list class="list" ng-repeat="charity in data.kickstarterCharities">
+							<ion-list class="list" ng-repeat="charity in tabs.kickstarterCharities">
 								<ion-item>
 									<!-- put charity view here -->
 								</ion-item>
@@ -27,8 +27,9 @@
             <ion-tab-header></ion-tab-header>
             <ion-content class="has-header">
               List of play store/appstore apps. Use ng-repeat in list.
-							<ion-list class="list" ng-repeat="app in data.playStoreApps">
-								<ion-item>
+							<ion-list class="list" ng-repeat="app in tabs.playStoreApps">
+								<ion-item class="item item-card">
+									{{ JSON.stringify(app) }}
 									<!-- put app view here -->
 								</ion-item>
 							</ion-list>
@@ -38,7 +39,7 @@
             <ion-tab-header></ion-tab-header>
             <ion-content class="has-header">
               List of community feats. Use ng-repeat in list.
-							<ion-list class="list" ng-repeat="feat in data.communityFeats">
+							<ion-list class="list" ng-repeat="feat in tabs.communityFeats">
 								<ion-item>
 									<!-- put feat view here -->
 								</ion-item>
@@ -48,7 +49,7 @@
         </ion-tabs>
 	</ion-content>
 	<ion-item class="item-thumbnail-left item item-stable item-with-margin">
-        <img src={{data.img}}>
+        <img src={{data.url}}>
         <h1 class="title ng-binding">{{data.name}}</h1>
      </ion-item>
 	<!-- <div class="current-description">
