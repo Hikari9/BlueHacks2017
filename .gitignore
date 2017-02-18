@@ -4,10 +4,10 @@
 node_modules/
 platforms/
 plugins/
-*.min.js
-*.min.js.map
-*.min.css
-*.min.css.map
+www/js/app-bundle.min.js
+www/js/app-bundle.min.js.map
+www/css/app-compiled-scss.min.css
+www/css/app-compiled-scss.min.css.map
 
 npm-debug.log
 

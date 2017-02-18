@@ -10,9 +10,11 @@ angular.module('bluehacks',
   ['ionic',
   'ngCordova',
   'ionic-letter-avatar',
+  'bluehacks.backend',
+  'bluehacks.aboutcontroller',
+  'bluehacks.accountcontroller',
   'bluehacks.homecontrollers',
   'bluehacks.sidemenucontrollers',
-  'bluehacks.backend',
   'bluehacks.landingcontrollers',
   'bluehacks.registercontrollers'
   ])
@@ -27,13 +29,13 @@ angular.module('bluehacks',
 
       //COMMAND TO DELETE DATABASE
     //window.sqlitePlugin.deleteDatabase({name: 'ebtracker.db', location: 'default'});
-    
+
     //OPEN DATABASE
     //db = window.sqlitePlugin.openDatabase({name: 'bluehacks.db', location: 'default'});
-    
+
     //DROP TABLES
     //ebtrackerdb.executeSql('DROP TABLE IF EXISTS user'); //flush table data
-    
+
     //CREATE TABLES
     //$cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS user (id integer primary key autoincrement, username text, password text)");
 
@@ -41,12 +43,24 @@ angular.module('bluehacks',
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
-    } 
+    }
   });
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
+
+  .state('landing', {
+    url: '/landing',
+    templateUrl: 'app/landing/landing.html',
+    controller: 'LandingCtrl'
+  })
+
+  .state('register', {
+    url: '/registeruser',
+    templateUrl: 'app/register/register.html',
+    controller: 'RegisterCtrl'
+  })
 
   .state('sidemenu', {
     url: '/sidemenu',
@@ -65,16 +79,30 @@ angular.module('bluehacks',
     }
   })
 
-  .state('landing', {
-    url: '/landing',
-    templateUrl: 'app/landing/landing.html',
-    controller: 'LandingCtrl'
+  .state('sidemenu.account', {
+    url: '/account',
+    views: {
+      'menuContent': {
+        templateUrl: 'app/account/account.html',
+        controller: 'AccountCtrl'
+      }
+    }
   })
 
-  .state('register', {
-    url: '/registeruser',
-    templateUrl: 'app/register/register.html',
-    controller: 'RegisterCtrl'
+  .state('sidemenu.about', {
+    url: '/about',
+    views: {
+      'menuContent': {
+        templateUrl: 'app/about/about.html',
+        controller: 'AboutCtrl'
+      }
+    }
+  })
+
+  .state('test', {
+    url: '/test',
+    templateUrl: 'app/test/test.html',
+    controller: 'TestCtrl'
   })
 
   // if none of the above states are matched, use this as the fallback
