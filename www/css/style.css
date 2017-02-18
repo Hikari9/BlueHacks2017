@@ -3,12 +3,28 @@
   margin-right: 5%;
   margin-top: 2%;
 }
+
+.tiles {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  /*margin: auto;*/
+}
+
 .tile {
   color: #fff;
-  height: 18.3vw !important;
-  padding: 10px;
-  margin-left:auto;
-  margin-right: auto;
+  height: 27.5vw !important;
+  width: 27.5vw;
+  margin: auto;
+  margin: -5px 5px;
+}
+
+@media (orientation: landscape){
+  .tile {
+    height: 16.5vw !important;
+    width: 16.5vw;
+  }
+
 }
 
 .tile:hover {
@@ -48,26 +64,9 @@
   background-size: cover;
   background-position: bottom;
 }
-@media (min-width: 600px) {
+@media (min-width: 432px) {
   .tile {
     -webkit-transition: all linear .5s;
     transition: all linear .5s;
-    height: 150px;
-    padding: 20px;
-  }
-  .tile-double {
-    height: 300px;
-  }
-  .tile + .tile {
-    margin-top: 10px;
-    height: 140px;
-  }
-  .tile-icon {
-    padding: 0;
-    font-size: 60px;
-    line-height: 150px;
-  }
-  .tile-title > h1 {
-    font-size: 32px;
   }
 }
