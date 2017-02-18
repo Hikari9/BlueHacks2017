@@ -45,7 +45,8 @@
     "cordova-plugin-splashscreen@~4.0.1",
     "cordova-plugin-statusbar@~2.2.1",
     "ionic-plugin-keyboard@~2.2.1",
-    "cordova-plugin-crosswalk-webview"
+    "cordova-plugin-crosswalk-webview",
+    "cordova-sqlite-storage@~2.0.2"
   ],
   "cordovaPlatforms": []
 }

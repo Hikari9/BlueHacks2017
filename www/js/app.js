@@ -9,6 +9,7 @@ angular.module('bluehacks',
   ['ionic',
   'ngCordova',
   'ionic-letter-avatar',
+  'ionic-native-transitions',
   'bluehacks.backend',
   'bluehacks.aboutcontroller',
   'bluehacks.accountcontroller',
@@ -18,32 +19,23 @@ angular.module('bluehacks',
   'bluehacks.registercontrollers'
   ])
 
-.run(function($ionicPlatform, $cordovaSQLite) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if (window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      cordova.plugins.Keyboard.disableScroll(true);
+// Configures defaults provided by the Cordova Native Transitions plugin.
+.config(function($ionicNativeTransitionsProvider) {
 
-      //COMMAND TO DELETE DATABASE
-    //window.sqlitePlugin.deleteDatabase({name: 'ebtracker.db', location: 'default'});
+  var config = $ionicNativeTransitionsProvider;
 
-    //OPEN DATABASE
-    //db = window.sqlitePlugin.openDatabase({name: 'bluehacks.db', location: 'default'});
-
-    //DROP TABLES
-    //ebtrackerdb.executeSql('DROP TABLE IF EXISTS user'); //flush table data
-
-    //CREATE TABLES
-    //$cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS user (id integer primary key autoincrement, username text, password text)");
-
-    }
-    if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
+  // for a swifter user experience, decrease the duration (originally 400)
+  config.setDefaultOptions({
+    duration: 300
   });
+
+  config.setDefaultBackTransition({
+    type: 'slide',
+    direction: 'right'
+  });
+
+  console.log('Setup native transitions: ', config);
+
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -106,4 +98,32 @@ angular.module('bluehacks',
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/landing');
+})
+
+.run(function($ionicPlatform, $cordovaSQLite) {
+  $ionicPlatform.ready(function() {
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if (window.cordova && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      cordova.plugins.Keyboard.disableScroll(true);
+
+      //COMMAND TO DELETE DATABASE
+    //window.sqlitePlugin.deleteDatabase({name: 'ebtracker.db', location: 'default'});
+
+    //OPEN DATABASE
+    //db = window.sqlitePlugin.openDatabase({name: 'bluehacks.db', location: 'default'});
+
+    //DROP TABLES
+    //ebtrackerdb.executeSql('DROP TABLE IF EXISTS user'); //flush table data
+
+    //CREATE TABLES
+    //$cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS user (id integer primary key autoincrement, username text, password text)");
+
+    }
+    if (window.StatusBar) {
+      // org.apache.cordova.statusbar required
+      StatusBar.styleDefault();
+    }
+  });
 });
