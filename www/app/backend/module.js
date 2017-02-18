@@ -1,1 +1,1 @@
-angular.module('bluehacks.backend', []);
+angular.module('bluehacks.backend', ['facebook']);
