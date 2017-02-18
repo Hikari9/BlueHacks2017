@@ -1,9 +1,9 @@
 <ion-view view-title="Home">
   <ion-content>
-    <ion-list>
-      <ion-item >
-        Test item
-      </ion-item>
-    </ion-list>
+    <div id="home-content-area">
+      <div class="tiles list" ng-repeat="tile in tiles">
+        <div class="tile balanced-bg tile-image" style="background-image: url({{ tile.url }})" ng-click="tile.click(tile)"></div>
+      </div>
+    </div>
   </ion-content>
 </ion-view>
