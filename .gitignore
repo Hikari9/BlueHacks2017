@@ -4,3 +4,10 @@
 node_modules/
 platforms/
 plugins/
+
+npm-debug.log
+
+# Don't ignore the files below
+
+!platforms/android/AndroidManifest.xml
+
