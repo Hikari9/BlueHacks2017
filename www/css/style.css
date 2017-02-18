@@ -191,6 +191,19 @@ border-color: white;
 text-align: justify;
 }
 
+a {
+  text-decoration: none;
+}
+
+.app-title {
+  vertical-align: middle;
+  font-size: 1.4em;
+}
+
+.app-id {
+  color: gray;
+}
+
 /*
 .static {
   position: relative;

@@ -27,16 +27,24 @@
             <ion-content class="item" padding="false" has-tabs>
               List of play store/appstore apps. Use ng-repeat in list.
 							<ion-list class="list" ng-repeat="app in tabs.playStoreApps">
-								<ion-item class="item item-card">
-									<div class="card">
-									  <div class="item">
-									    This is a Ionic card without item-text-wrap class.
-									  </div>
-									  <div class="item item-text-wrap">
-									    This is a Ionic card with item-text-wrap class.
-									  </div>
+								<div class="card">
+								  <div class="item">
+										<a href="{{ app.url }}" target="__blank">
+											<div class="item item-avatar">
+								    		<img class="app-icon" src="{{ app.icon }}">
+												<h2 class="app-title">
+													{{ app.title }}
+												</h2>
+												<h4 class="app-id">
+													{{ app.id }}
+												</h4>
+											</div>
+										</a>
+										<div class="item item-body">
+											Summary: {{ app.summary }}
+										</div>
 									</div>
-								</ion-item>
+								</div>
 							</ion-list>
             </ion-content>
           </ion-tab>
