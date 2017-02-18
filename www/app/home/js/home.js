@@ -6,6 +6,7 @@ angular.module('bluehacks.homecontrollers', [])
       url: '../img/' + index + '.png',
       click: function(tile) {
         // TODO: what happens when I click this tile
+        console.log("clicked!");
       }
     };
   };
