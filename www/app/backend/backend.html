@@ -1,9 +1,9 @@
-<ion-view view-title="Test">
+<ion-view view-title="Backend">
   <ion-content padding="true">
     <input type="search" ng-model="data.keyword">
     <ion-button class="button button-positive" ng-click="ctrl.search()">Search</ion-button>
     <div>
-      {{ ctrl.results || "Empty" }}
+      {{ data.results || "Empty" }}
     </div>
   </ion-content>
 </ion-view>
