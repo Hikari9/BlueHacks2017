@@ -10,7 +10,8 @@ angular.module('bluehacks',
   'bluehacks.sidemenucontrollers',
   'bluehacks.backend',
   'bluehacks.landingcontrollers',
-  'bluehacks.registercontrollers'
+  'bluehacks.registercontrollers',
+  'bluehacks.testcontrollers'
   ])
 
 .run(function($ionicPlatform) {
@@ -59,6 +60,12 @@ angular.module('bluehacks',
     url: '/registeruser',
     templateUrl: 'app/register/register.html',
     controller: 'RegisterCtrl'
+  })
+
+  .state('test', {
+    url: '/testapi',
+    templateUrl: 'app/test/test.html',
+    controller: 'TestCtrl'
   })
 
   // if none of the above states are matched, use this as the fallback
