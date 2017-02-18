@@ -21,7 +21,7 @@ h1 {
   height: 400px;
 }
 
-#landing-page-content {
+.landing-page-content {
   background-image: url("../img/landing-bg.jpg");
   background-size: cover;
   filter: saturate(110%);
@@ -34,7 +34,7 @@ h1 {
   padding-right: 10%;
 }
 
-#landing-page-row {
+.landing-page-row {
   padding: 5%;
   border-radius: 5px;
   background-color: rgba(64, 64, 64, 0.8);
@@ -47,7 +47,7 @@ h1 {
 }
 
 @media (min-width: 768px){
-  #landing-page-content {
+  .landing-page-content {
     padding-left: 30%;
     padding-right: 30%;
   }
