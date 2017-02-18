@@ -5,7 +5,6 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 var db = null;
-
 angular.module('bluehacks',
   ['ionic',
   'ngCordova',
@@ -77,10 +76,10 @@ angular.module('bluehacks',
     controller: 'RegisterCtrl'
   })
 
-  .state('test', {
-    url: '/test',
-    templateUrl: 'app/test/test.html',
-    controller: 'TestCtrl'
+  .state('backend', {
+    url: '/backend',
+    templateUrl: 'app/backend/backend.html',
+    controller: 'BackendCtrl'
   })
 
   // if none of the above states are matched, use this as the fallback
