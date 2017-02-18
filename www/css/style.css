@@ -1,13 +1,15 @@
 #home-content-area {
   margin-left: 5%;
   margin-right: 5%;
-  margin-top: 2%;
+  margin-top: 5%;
+  align-items: center;
+  text-align: center;
+  margin: 2% auto !important;
 }
 
 .tiles {
   display: inline-flex;
   flex-direction: row;
-  align-items: center;
   /*margin: auto;*/
 }
 
@@ -15,7 +17,9 @@
   color: #fff;
   margin: auto;
   margin: -1vw 1vw;
-  transition: all 0.5s ease-out;
+  opacity: 1;
+  transition: width height 1s ease-out;
+  transition: opacity 0.1s linear;
 }
 
 .tile.tile-show {
@@ -31,18 +35,29 @@
     height: 16vw;
     width: 16vw;
   }
+  .tile.tile-current {
+    height: 20vw;
+    width: 20vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* ito yung tile na naclick na puta */
 .tile.tile-current {
-  height: 30vw;
-  width: 30vw;
+  height: 20vw;
+  width: 20vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .tile.tile-hide {
   height: 0vw;
   width: 0vw;
   margin: 0vw;
+  opacity: 0;
 }
 
 .tile:hover {
