@@ -13,6 +13,10 @@
   display: block;
 }
 
+#goal-content {
+
+}
+
 h1 {
   /*font-family: "Montserrat", sans-serif;*/
 }
@@ -38,6 +42,25 @@ h1 {
   padding: 5%;
   border-radius: 5px;
   background-color: rgba(64, 64, 64, 0.8);
+}
+
+.register-page-content {
+  background-image: url("../img/landing-bg.jpg");
+  background-size: cover;
+  filter: saturate(110%);
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  height: 100%;
+  margin: auto;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.register-page-row {
+  padding: 5%;
+  border-radius: 5px;
+  background-color: rgba(64,64,64,0.8);
 }
 
 .current-description {
@@ -173,7 +196,7 @@ text-align: justify;
 .relative{
   .tabs,
   .scroll-content{
-    position: relative; 
+    position: relative;
     top:auto;
   }
 }
