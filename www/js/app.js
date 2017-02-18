@@ -11,6 +11,8 @@ angular.module('bluehacks',
   'ngCordova',
   'ionic-letter-avatar',
   'bluehacks.backend',
+  'bluehacks.aboutcontroller',
+  'bluehacks.accountcontroller',
   'bluehacks.homecontrollers',
   'bluehacks.sidemenucontrollers',
   'bluehacks.landingcontrollers',
@@ -48,6 +50,18 @@ angular.module('bluehacks',
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
+  .state('landing', {
+    url: '/landing',
+    templateUrl: 'app/landing/landing.html',
+    controller: 'LandingCtrl'
+  })
+
+  .state('register', {
+    url: '/registeruser',
+    templateUrl: 'app/register/register.html',
+    controller: 'RegisterCtrl'
+  })
+
   .state('sidemenu', {
     url: '/sidemenu',
     abstract: true,
@@ -65,16 +79,24 @@ angular.module('bluehacks',
     }
   })
 
-  .state('landing', {
-    url: '/landing',
-    templateUrl: 'app/landing/landing.html',
-    controller: 'LandingCtrl'
+  .state('sidemenu.account', {
+    url: '/account',
+    views: {
+      'menuContent': {
+        templateUrl: 'app/account/account.html',
+        controller: 'AccountCtrl'
+      }
+    }
   })
 
-  .state('register', {
-    url: '/registeruser',
-    templateUrl: 'app/register/register.html',
-    controller: 'RegisterCtrl'
+  .state('sidemenu.about', {
+    url: '/about',
+    views: {
+      'menuContent': {
+        templateUrl: 'app/about/about.html',
+        controller: 'AboutCtrl'
+      }
+    }
   })
 
   .state('test', {

@@ -1,0 +1,25 @@
+<ion-view view-title="My Account" ng-init="getUserAccountDetails();">
+  <ion-content padding="false" scroll="true">
+    <div class="item item-text-wrap border-bottom account">
+      <img id="profile-photo" ng-src="img/avatar-default.jpg" alt="Profile Picture">
+      <!-- <img id="profile-photo" ng-src="{{user.avatar}}" alt="Profile Picture"> -->
+      <h3 id="font-head-large">{{firstname}} {{lastname}}</h3>
+      <p id="font-head-small">Programmer</p>
+    </div>
+    <i class="item">
+      First Name
+      <span class="item-note">
+        {{firstname}}
+      </span>
+    </i>
+    <i class="item">
+      Last Name
+      <span class="item-note">
+        {{lastname}}
+      </span>
+    </i>
+  </ion-content>
+</ion-view>
+
+
+
