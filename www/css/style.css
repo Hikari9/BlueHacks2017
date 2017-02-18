@@ -70,3 +70,23 @@
     transition: all linear .5s;
   }
 }
+
+/*-- Side Menu CSS --*/
+.darkSide {
+background-color: rgba(33,37,43,1);
+color:#333333;
+}
+
+.darkSide .item {
+border:none;
+color:#fff;
+font-size:15px;
+}
+
+.darkSide .item-complex .item-content,.darkSide .item-radio .item-content {
+background-color: rgba(33,37,43,1);
+}
+
+.text-light{
+color: #FFF !important;
+}
