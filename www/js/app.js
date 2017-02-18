@@ -4,8 +4,11 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
+var db = null;
+
 angular.module('bluehacks',
   ['ionic',
+  'ngCordova',
   'bluehacks.homecontrollers',
   'bluehacks.sidemenucontrollers',
   'bluehacks.backend',
@@ -13,7 +16,7 @@ angular.module('bluehacks',
   'bluehacks.registercontrollers'
   ])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $cordovaSQLite) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -26,6 +29,18 @@ angular.module('bluehacks',
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+    //COMMAND TO DELETE DATABASE
+    //window.sqlitePlugin.deleteDatabase({name: 'ebtracker.db', location: 'default'});
+    
+    //OPEN DATABASE
+    db = window.sqlitePlugin.openDatabase({name: 'bluehacks.db', location: 'default'});
+    
+    //DROP TABLES
+    //ebtrackerdb.executeSql('DROP TABLE IF EXISTS user'); //flush table data
+    
+    //CREATE TABLES
+    $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS user (id integer primary key autoincrement, username text, password text)"); 
   });
 })
 
