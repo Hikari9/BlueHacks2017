@@ -6,8 +6,8 @@
             <ion-content class="has-header">
 							List of fb pages. Use ng-repeat in list.
 							<ion-list class="list" ng-repeat="page in tabs.fbPages">
+								<!-- put page view here -->
 								<ion-item>
-									<!-- put page view here -->
 								</ion-item>
 							</ion-list>
             </ion-content>
@@ -29,7 +29,14 @@
               List of play store/appstore apps. Use ng-repeat in list.
 							<ion-list class="list" ng-repeat="app in tabs.playStoreApps">
 								<ion-item class="item item-card">
-									{{ JSON.stringify(app) }}
+									<div class="card">
+									  <div class="item">
+									    This is a Ionic card without item-text-wrap class.
+									  </div>
+									  <div class="item item-text-wrap">
+									    This is a Ionic card with item-text-wrap class.
+									  </div>
+									</div>
 									<!-- put app view here -->
 								</ion-item>
 							</ion-list>
@@ -48,10 +55,12 @@
           </ion-tab>
         </ion-tabs>
 	</ion-content>
+
 	<ion-item class="item-thumbnail-left item item-stable item-with-margin">
         <img src={{data.url}}>
         <h1 class="title ng-binding">{{data.name}}</h1>
      </ion-item>
+	 -->
 	<!-- <div class="current-description">
         <h1>{{ data.name }}</h1>
       </div> -->
