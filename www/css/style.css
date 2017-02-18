@@ -194,7 +194,7 @@ text-align: justify;
 .relative{
   .tabs,
   .scroll-content{
-    position: relative;
+    position: relative; 
     top:auto;
   }
 }
