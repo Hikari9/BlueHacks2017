@@ -8,6 +8,8 @@ angular.module('bluehacks.homecontrollers', [])
     return {
       url: '../img/' + index + '.png',
       getClass: function() {
+        return "tile-show";
+        /*
         if ($scope.current == null) {
           return "tile-show";
         } else if ($scope.current != this) {
@@ -15,11 +17,13 @@ angular.module('bluehacks.homecontrollers', [])
         } else {
           return "tile-current";
         }
+        */
       },
       click: function() {
         if ($scope.current == null){
-          $scope.current = this;
-          DataService.data = $scope.current;
+          // $scope.current = this;
+          // DataService.data = $scope.current;
+          DataService.data = this;
           console.log("Data", DataService.data)
           $state.go('sidemenu.goal');
         }

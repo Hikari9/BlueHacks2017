@@ -4,7 +4,7 @@ angular.module('bluehacks.goalcontroller', [])
 
 	$scope.data = {}
 
-	$scope.$on('$ionicView.enter', function() {
+	$scope.$on('$ionicView.beforeEnter', function() {
 		console.log("DATA IS", DataService.data.name)
 		$scope.data.name = DataService.data.name;
 		$scope.data.img = DataService.data.url;
