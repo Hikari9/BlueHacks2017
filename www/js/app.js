@@ -9,6 +9,7 @@ angular.module('bluehacks',
   ['ionic',
   'ngCordova',
   'ionic-letter-avatar',
+  'ionic-native-transitions',
   'bluehacks.backend',
   'bluehacks.aboutcontroller',
   'bluehacks.accountcontroller',
@@ -121,4 +122,21 @@ angular.module('bluehacks',
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/landing');
+})
+
+// Configures defaults provided by the Cordova Native Transitions plugin.
+.config(function($ionicNativeTransitionsProvider) {
+
+  var config = $ionicNativeTransitionsProvider;
+
+  // for a swifter user experience, decrease the duration (originally 400)
+  config.setDefaultOptions({
+    duration: 300
+  });
+
+  config.setDefaultBackTransition({
+    type: 'slide',
+    direction: 'right'
+  });
+
 });
