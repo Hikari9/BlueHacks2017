@@ -4,10 +4,12 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('bluehacks', 
+angular.module('bluehacks',
   ['ionic',
   'bluehacks.homecontrollers',
-  'bluehacks.sidemenucontrollers'
+  'bluehacks.sidemenucontrollers',
+  'bluehacks.landingcontrollers',
+  'bluehacks.registercontrollers'
   ])
 
 .run(function($ionicPlatform) {
@@ -46,6 +48,18 @@ angular.module('bluehacks',
     }
   })
 
+  .state('landing', {
+    url: '/landing',
+    templateUrl: 'app/landing/landing.html',
+    controller: 'LandingCtrl'
+  })
+
+  .state('register', {
+    url: '/registeruser',
+    templateUrl: 'app/register/register.html',
+    controller: 'RegisterCtrl'
+  })
+
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/sidemenu/home');
+  $urlRouterProvider.otherwise('/landing');
 });
