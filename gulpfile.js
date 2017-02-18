@@ -45,6 +45,8 @@ var ngAnnotate = require('gulp-ng-annotate');
 var gutil      = require('gulp-util');
 var shell      = require('gulp-shell');
 
+gulp.task('serve:before', ['default']);
+
 // paths for injecting/watching
 var paths = {
   sass: ['./scss/**/*.scss'],
@@ -57,7 +59,7 @@ var paths = {
  * 'sass' and 'javascript' will already run both
  * respectively.
  */
-gulp.task('default', ['sass', 'javascript']);
+gulp.task('default', ['watch', 'sass', 'javascript']);
 
 /**
  * Watch for changes in files during 'ionic serve'.
