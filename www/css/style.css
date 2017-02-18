@@ -14,7 +14,7 @@
 }
 
 h1 {
-  font-family: "Montserrat", sans-serif;
+  /*font-family: "Montserrat", sans-serif;*/
 }
 
 .tile-tabs.col {
@@ -55,22 +55,22 @@ h1 {
 
 /*-- Side Menu CSS --*/
 .darkSide {
-background-color: rgba(33,37,43,1);
-color:#333333;
+  background-color: rgba(33,37,43,1);
+  color:#333333;
 }
 
 .darkSide .item {
-border:none;
-color:#fff;
-font-size:15px;
+  border:none;
+  color:#fff;
+  font-size:15px;
 }
 
 .darkSide .item-complex .item-content,.darkSide .item-radio .item-content {
-background-color: rgba(33,37,43,1);
+  background-color: rgba(33,37,43,1);
 }
 
 .text-light{
-color: #FFF !important;
+  color: #FFF !important;
 }
 
 .tile-double {
@@ -88,7 +88,7 @@ color: #FFF !important;
   height: 100%;
 }
 .tile-title > h1 {
-  font-family: 'Lato', sans-serif;
+  /*font-family: 'Lato', sans-serif;*/
   font-weight: 300;
   font-size: 24px;
   position: absolute;

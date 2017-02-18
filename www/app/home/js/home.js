@@ -1,6 +1,6 @@
 angular.module('bluehacks.homecontrollers', [])
 
-.controller('HomeCtrl', function($scope) {
+.controller('HomeCtrl', function($scope, $http) {
   $scope.$on('$ionicView.enter', function() {
     $scope.current = null;
   });
@@ -24,10 +24,16 @@ angular.module('bluehacks.homecontrollers', [])
       }
     };
   };
-  $scope.tiles = [];
-  for (var i = 1; i <= 17; ++i) {
-    $scope.tiles.push(createTile(i));
-  }
+  $http.get('/json/goals.json')
+  .then(function(results) {
+    var goals = results.data;
+    $scope.tiles = [];
+    for (var i = 1; i <= 17; ++i) {
+      var tile = createTile(i);
+      tile.name = goals[i - 1].name;
+      $scope.tiles.push(tile);
+    }
+  });
 
   $scope.tilenames = [];
   $scope.tilenames.push("No Poverty");
