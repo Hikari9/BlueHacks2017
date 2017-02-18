@@ -2,12 +2,16 @@
   <ion-content>
     <div id="home-content-area">
       <div class="tiles list" ng-repeat="tile in tiles">
+
         <div
           ng-class="tile.getClass()"
           class="tile balanced-bg tile-image"
           style="background-image: url({{ tile.url }})"
           ng-click="tile.click()">
         </div>
+
+        
+
       </div>
     </div>
   </ion-content>
