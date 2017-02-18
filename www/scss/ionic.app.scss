@@ -1,0 +1,76 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+// $ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+// @import "www/lib/ionic/scss/ionic";
+
+.tiles {
+  display: inline-flex;
+    flex-direction: row;
+
+  .tile {
+
+    margin: auto;
+    margin: -1vw 1vw;
+    opacity: 1;
+    transition: all 0.3s linear;
+  }
+
+  .tile.tile-show {
+    height: 27.5vw;
+    width: 27.5vw;
+  }
+
+  @media (orientation: landscape){
+    .tile {
+      margin: 0vw 1vw;
+    }
+    .tile.tile-show {
+      height: 16vw;
+      width: 16vw;
+    }
+    .tile.tile-current {
+      height: 20vw;
+      width: 20vw;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  /* ito yung tile na naclick na puta */
+  .tile.tile-current {
+    height: 20vw;
+    width: 20vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tile.tile-hide {
+    height: 0vw;
+    width: 0vw;
+    margin: 0vw;
+    opacity: 0;
+  }
+  .tile:hover {
+    opacity: 0.5;
+  }
+}
