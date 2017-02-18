@@ -12,11 +12,16 @@ angular.module('bluehacks',
   'bluehacks.backend',
   'bluehacks.aboutcontroller',
   'bluehacks.accountcontroller',
+  'bluehacks.goalcontroller',
   'bluehacks.homecontrollers',
   'bluehacks.sidemenucontrollers',
   'bluehacks.landingcontrollers',
   'bluehacks.registercontrollers'
   ])
+
+.service('DataService', function(){
+  return {data: {}}
+})
 
 .run(function($ionicPlatform, $cordovaSQLite) {
   $ionicPlatform.ready(function() {
@@ -94,6 +99,16 @@ angular.module('bluehacks',
       'menuContent': {
         templateUrl: 'app/about/about.html',
         controller: 'AboutCtrl'
+      }
+    }
+  })
+
+  .state('sidemenu.goal', {
+    url: '/goal',
+    views: {
+      'menuContent': {
+        templateUrl: 'app/goal/goal.html',
+        controller: 'GoalCtrl'
       }
     }
   })

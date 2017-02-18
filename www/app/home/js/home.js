@@ -1,6 +1,6 @@
 angular.module('bluehacks.homecontrollers', [])
 
-.controller('HomeCtrl', function($scope, $http) {
+.controller('HomeCtrl', function($scope, $http, $state, DataService) {
   $scope.$on('$ionicView.enter', function() {
     $scope.current = null;
   });
@@ -17,10 +17,16 @@ angular.module('bluehacks.homecontrollers', [])
         }
       },
       click: function() {
-        if ($scope.current == null)
+        if ($scope.current == null){
           $scope.current = this;
-        else
+          DataService.data = $scope.current;
+          console.log("Data", DataService.data)
+          $state.go('sidemenu.goal');
+        }
+
+        else{
           $scope.current = null;
+        }
       }
     };
   };

@@ -169,3 +169,11 @@ border-color: white;
 .about {
 text-align: justify;
 }
+
+.relative{
+  .tabs,
+  .scroll-content{
+    position: relative; 
+    top:auto;
+  }
+}

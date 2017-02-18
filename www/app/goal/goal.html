@@ -1,0 +1,37 @@
+<ion-view view-title="Goal">
+	<ion-content>
+      <ion-tabs class="tabs-balanced tabs-top tabs-striped relative">
+          <ion-tab title="Movements">
+            <ion-tab-header></ion-tab-header>
+            <ion-content class="has-header">
+              List of fb pages. Use ng-repeat in list.
+            </ion-content>        
+          </ion-tab>
+          <ion-tab title="Charities">
+            <ion-tab-header></ion-tab-header>
+            <ion-content class="has-header">
+              List of kickstarter charities. Use ng-repeat in list.
+            </ion-content>          
+          </ion-tab>
+          <ion-tab title="Applications">
+            <ion-tab-header></ion-tab-header>
+            <ion-content class="has-header">
+              List of play store/appstore apps. Use ng-repeat in list.
+            </ion-content>          
+          </ion-tab>
+          <ion-tab title="Community">
+            <ion-tab-header></ion-tab-header>
+            <ion-content class="has-header">
+              List of community feats. Use ng-repeat in list.
+            </ion-content>          
+          </ion-tab>
+        </ion-tabs>
+	</ion-content>
+	<ion-item class="item-thumbnail-left item item-stable item-with-margin">
+        <img src={{data.img}}>
+        <h1 class="title ng-binding">{{data.name}}</h1>
+     </ion-item>
+	<!-- <div class="current-description">
+        <h1>{{ data.name }}</h1>
+      </div> -->
+</ion-view>
