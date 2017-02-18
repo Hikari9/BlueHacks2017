@@ -1,14 +1,31 @@
-<ion-view view-title="Register New User">
-  <ion-content padding="true" scroll="false">
-    <div class="list list-inset">
-           <label class="item item-input">
-               <input type="text" placeholder="Username" ng-model="data.username">
-           </label>
-           <label class="item item-input">
-               <input type="password" placeholder="Password" ng-model="data.password">
-           </label>
+<ion-view id="register-view" view-title="Register New User">
+  <ion-nav-bar class="bar-calm">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+    <ion-nav-buttons side="left">
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content padding="false" scroll="false" has-header>
+    <div class="landing-page-content">
+      <div class="landing-page-row">
+        <div class="list list-inset" style="border-radius:5px; padding: 0;">
+          <!-- <img class="item item-calm image" src="img/avatar-default.jpg" alt="Profile Picture"> -->
+          <img class="item item-calm image" src="img/Goals.png" alt="Profile Picture">
+          <label id="be-part" class="item item-block item-calm">
+            Be part of building a sustainable world!
+          </label>
+          <label id="be-part" class="item item-input">
+             <input type="text" placeholder="Username" ng-model="data.username">
+          </label>
+          <label class="item item-input">
+             <input type="password" placeholder="Password" ng-model="data.password">
+          </label>
+          <label class="item item-input">
+             <input type="password" placeholder="Password (repeat)" ng-model="data.passwordagain">
+          </label>
        </div>
-       <button ui-sref="landing" class="button button-block button-energized" ng-click="register()">Confirm</button>
-
-</ion-content>
+       <button ui-sref="landing" class="button button-block button-balanced" ng-click="register()">Confirm
+       </button>
+    </div>
+ </ion-content>
 </ion-view>

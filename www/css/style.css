@@ -40,6 +40,26 @@ h1 {
   background-color: rgba(64, 64, 64, 0.8);
 }
 
+#register-view .landing-page-row {
+  width: 100%;
+  max-width: 500px;
+}
+
+#register-view img.item {
+  width: 100%;
+}
+
+#register-view .list {
+  text-align: center;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+#be-part {
+  font-size: 1.1em;
+  text-transform: uppercase;
+}
+
 .current-description {
   display:inline-block;
   text-align: center;
@@ -51,6 +71,7 @@ h1 {
     padding-left: 30%;
     padding-right: 30%;
   }
+
 }
 
 /*-- Side Menu CSS --*/
@@ -168,4 +189,12 @@ border-color: white;
 
 .about {
 text-align: justify;
+}
+
+.relative{
+  .tabs,
+  .scroll-content{
+    position: relative;
+    top:auto;
+  }
 }
