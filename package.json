@@ -1,7 +1,7 @@
 {
-  "name": "bluehacks2017",
+  "name": "UN Goals 17",
   "version": "1.1.1",
-  "description": "BlueHacks2017: An Ionic project",
+  "description": "UN Goals 17: A tracker application for United Nation's Sustainable Development Goals",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
