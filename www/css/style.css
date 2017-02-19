@@ -91,6 +91,28 @@ h1 {
     margin-left: 20%;
     margin-right: 20%;
   }
+
+  .profile-content {
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  #font-head-large{
+    font-size: 5vw !important;
+  }
+  #font-head-small {
+    font-size: 3vw !important;
+  }
+
+  .profile-details {
+    margin-left: 35%;
+    margin-right: 35%;
+  }
+
+  .profile-details .item {
+    border: none;
+    font-size: 1.3vw;
+  }
 }
 
 /*-- Side Menu CSS --*/

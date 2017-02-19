@@ -5,15 +5,31 @@
 				<h1 class="title ng-binding">{{data.name}}</h1>
 			</ion-item>
       <ion-tabs class="tabs-clear tabs-top tabs-striped relative no-border">
-          <ion-tab title="Movements" has-header>
-            <ion-content class="item" padding="false" has-tabs>
-							List of fb pages. Use ng-repzeat in list.
-							<ion-list class="list" ng-repeat="page in tabs.fbPages">
-								<ion-item>
-								</ion-item>
-							</ion-list>
-            </ion-content>
-          </ion-tab>
+
+				<ion-tab title="Community" has-header>
+
+					<ion-content class="item" padding="false" has-tabs>
+						<div class="circular-progress">
+							<div class="percent-circular">{{ data.totalprogress }}%</div>
+						</div>
+						<!-- List of community feats. Use ng-repeat in list. -->
+						<ion-list class="list" ng-repeat="feat in tabs.communityFeats">
+								<div class="row feat-row">
+									<b class="feat-label col col-20">{{ feat.index }}</b>
+									<div class="feat-description col col-80">
+
+										<div>{{ feat.description }}</div>
+										<div class="feat-progress">
+											<div class="progress-inner" style="width: {{ feat.progress }}%">
+												{{ feat.progress }}%
+											</div>
+									</div>
+
+								</div>
+							</div>
+						</ion-list>
+					</ion-content>
+				</ion-tab>
           <ion-tab title="Charities" has-header>
             <ion-content class="item" padding="false" has-tabs>
               List of kickstarter charities. Use ng-repeat in list.
@@ -48,26 +64,12 @@
 							</ion-list>
             </ion-content>
           </ion-tab>
-          <ion-tab title="Community" has-header>
-
+					<ion-tab title="Movements" has-header>
             <ion-content class="item" padding="false" has-tabs>
-							<div class="circular-progress">
-								<div class="percent-circular">{{ data.totalprogress }}%</div>
-							</div>
-              <!-- List of community feats. Use ng-repeat in list. -->
-							<ion-list class="list" ng-repeat="feat in tabs.communityFeats">
-									<div class="row feat-row">
-										<b class="feat-label col col-20">{{ feat.index }}</b>
-										<div class="feat-description col col-80">
-
-											<div>{{ feat.description }}</div>
-											<div class="feat-progress">
-												<div class="progress-inner" style="width: {{ feat.progress }}%">
-													{{ feat.progress }}%
-												</div>
-										</div>
-
-									</div>
+							List of fb pages. Use ng-repzeat in list.
+							<ion-list class="list" ng-repeat="page in tabs.fbPages">
+								<ion-item>
+								</ion-item>
 							</ion-list>
             </ion-content>
           </ion-tab>
