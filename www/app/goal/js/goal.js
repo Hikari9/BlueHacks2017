@@ -2,8 +2,19 @@ angular.module('bluehacks.goalcontroller', [])
 
 .controller('GoalCtrl', function ($scope, $state, $stateParams, DataService, DataLoadingService) {
 
+	function dataToURI(data) {
+		var key, result = [];
+		for (key in data)
+			if (data.hasOwnProperty(key))
+				result.push(encodeURIComponent(key) + "=" + encodeURIComponent(data[key]));
+		return result.join('&');
+	};
+
 	$scope.data = {};
 	$scope.tabs = {};
+	$scope.encode = function(name) {
+		return "https://facebook.com/search/pages/?" + dataToURI({q: name});
+	};
 
 	$scope.$on('$ionicView.beforeEnter', function() {
 		if (!DataService.data || !DataService.data.name)
@@ -26,5 +37,4 @@ angular.module('bluehacks.goalcontroller', [])
 		DataLoadingService.loadCommunityFeats($scope.data, $scope.tabs.communityFeats);
 	});
 
-	
 });
