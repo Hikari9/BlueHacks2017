@@ -1,6 +1,6 @@
 angular.module('bluehacks.backend')
 
-.service('DataLoadingService', function(HttpService, GoogleApiCrawlerService) {
+.service('DataLoadingService', function(HttpService, GoogleApiCrawlerService, GOALS) {
 
 	function loadFbPages(model, resultsCollection) {
 		// TODO: async loading here to results
@@ -39,7 +39,7 @@ angular.module('bluehacks.backend')
 	function loadCommunityFeats(model, resultsCollection) {
 		var totalprogress = 0;
 		var count = 0;
-    return HttpService.get('json/goals.json').then(function(results) {
+    return HttpService.get(GOALS.url()).then(function(results) {
       angular.forEach(results[model.index - 1].milestones, function(milestone, index) {
         console.log('Milestone (' + model.name + ')', milestone);
          milestone.index = index + 1;

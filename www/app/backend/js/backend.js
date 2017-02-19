@@ -1,5 +1,11 @@
 angular.module('bluehacks.backend')
-
+.service('GOALS', function() {
+  return {
+    url: function() {
+      return window.cordova ? '../www/json/goals.json' : '/json/goals.json';
+    }
+  };
+})
 .controller('BackendCtrl', function($scope, $ionicLoading, $http, FacebookApiCrawlerService, GoogleApiCrawlerService) {
   var api = GoogleApiCrawlerService;
   $scope.data = {};

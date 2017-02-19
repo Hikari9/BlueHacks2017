@@ -1,12 +1,12 @@
 angular.module('bluehacks.homecontrollers', [])
 
-.controller('HomeCtrl', function($scope, $http, $state, DataService) {
+.controller('HomeCtrl', function($scope, $http, $state, GOALS, DataService) {
   $scope.$on('$ionicView.enter', function() {
     $scope.current = null;
   });
   function createTile(index) {
     return {
-      url: '../img/' + index + '.png',
+      url: 'img/' + index + '.png',
       index: index, totalprogress: 0,
       getClass: function() {
         return "tile-show";
@@ -26,7 +26,7 @@ angular.module('bluehacks.homecontrollers', [])
       }
     };
   };
-  $http.get('json/goals.json')
+  $http.get(GOALS.url())
   .then(function(results) {
     var goals = results.data;
     $scope.tiles = [];
