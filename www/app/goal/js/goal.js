@@ -26,4 +26,5 @@ angular.module('bluehacks.goalcontroller', [])
 		DataLoadingService.loadCommunityFeats($scope.data, $scope.tabs.communityFeats);
 	});
 
+	
 });

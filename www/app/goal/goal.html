@@ -49,13 +49,22 @@
             </ion-content>
           </ion-tab>
           <ion-tab title="Community" has-header>
+
             <ion-content class="item" padding="false" has-tabs>
-              List of community feats. Use ng-repeat in list.
+							<div class="circular-progress">
+								<div class="percent-circular">41%</div>
+							</div>
+              <!-- List of community feats. Use ng-repeat in list. -->
 							<ion-list class="list" ng-repeat="feat in tabs.communityFeats">
 									<div class="row feat-row">
 										<b class="feat-label col col-20">{{ feat.index }}</b>
 										<div class="feat-description col col-80">
-											{{ feat.description }}
+											<div>{{ feat.description }}</div>
+											<div class="feat-progress">
+												<div class="progress-inner" style="width: {{ feat.progress }}%">
+													{{ feat.progress }}%
+												</div>
+											</div>
 										</div>
 									</div>
 							</ion-list>

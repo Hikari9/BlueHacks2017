@@ -179,6 +179,44 @@ border: 0px solid #FBFBFB;
 border-bottom: #0075B2 !important;
 }
 
+.circular-progress {
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  border: 5px solid #000;
+  font-size: 4em;
+  color: #000;
+  /*line-height: 500px;*/
+  text-align: center;
+  vertical-align: middle;
+  background: none;
+  display: block;
+  margin: 0 auto;
+}
+
+.percent-circular {
+  vertical-align: middle;
+  margin-top: 50%;
+  color: red;
+  margin-bottom: 50%;
+}
+
+.feat-progress {
+  position: relative;
+  height: 2em;
+  border-radius: 20px;
+  text-align: center;
+  background-color: 	#A9A9A9;
+}
+
+.progress-inner {
+  height: 100%;
+  background-color: #007474;
+  border-radius: 20px;
+  padding-top: 7px;
+  color: white;
+}
+
 #font-head-large{
 text-align: center;
 font-size: 7vw;
