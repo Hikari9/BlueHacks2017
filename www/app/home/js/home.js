@@ -7,17 +7,9 @@ angular.module('bluehacks.homecontrollers', [])
   function createTile(index) {
     return {
       url: '../img/' + index + '.png',
+      index: index,
       getClass: function() {
         return "tile-show";
-        /*
-        if ($scope.current == null) {
-          return "tile-show";
-        } else if ($scope.current != this) {
-          return "tile-hide";
-        } else {
-          return "tile-current";
-        }
-        */
       },
       click: function() {
         if ($scope.current == null){

@@ -1,13 +1,13 @@
 angular.module('bluehacks.backend')
 
-.service('DataLoadingService', function(GoogleApiCrawlerService) {
+.service('DataLoadingService', function(HttpService, GoogleApiCrawlerService) {
 
-	function loadFbPages(model, results) {
+	function loadFbPages(model, resultsCollection) {
 		// TODO: async loading here to results
 	};
 
-	function loadKickstarterCharities(model, results) {
-		// TODO: async loading here to results
+	function loadKickstarterCharities(model, resultsCollection) {
+
 	};
 
 	function loadPlayStoreApps(model, resultsCollection) {
@@ -34,8 +34,15 @@ angular.module('bluehacks.backend')
     });
 	};
 
-	function loadCommunityFeats(model, results) {
-		// TODO: async loading here to results
+	function loadCommunityFeats(model, resultsCollection) {
+    return HttpService.get('/json/goals.json').then(function(results) {
+      angular.forEach(results[model.index - 1].milestones, function(milestone, index) {
+        console.log('Milestone (' + model.name + ')', milestone);
+         milestone.index = index + 1;
+        resultsCollection.push(milestone);
+
+      });
+    });
 	};
 
   return {

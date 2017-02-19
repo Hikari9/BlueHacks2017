@@ -213,11 +213,19 @@ a {
   color: gray;
 }
 
-/*
-.static {
-  position: relative;
+.feat-label {
+  width: 15%;
+  font-size: 3.5em;
+  vertical-align: middle;
+  margin: auto;
+  text-align: left;
 }
 
-.static > .scroll {
+.feat-description {
+  width: 85%;
+  white-space: normal;
 }
-*/
+
+.feat-row {
+  margin: 10px 0;
+}
