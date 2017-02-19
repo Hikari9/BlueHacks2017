@@ -1,0 +1,19 @@
+[
+	{"name": "No Poverty", "organization" : "KickStart.org"},
+	{"name": "Zero Hunger", "organization" : "The Hunger Project Australia"},
+	{"name": "Good Health and Well-being", "organization" : "Marie Stopes International"},
+	{"name": "Quality Education", "organization" : "One World Foundation Scholarship Program"},
+	{"name": "Gender Equality", "organization" : "Thomi Africa"},
+	{"name": "Clean Water and Sanitation", "organization" : "Water.org"},
+	{"name": "Affordable and Clean Energy", "organization" : "Renewable World"},
+	{"name": "Decent Work and Economic Growth", "organization" : "Opportunity International"},
+	{"name": "Industry, Innovation and Infrastructure", "organization" : "International Council for Research and Innovation in Building and Construction"},
+	{"name": "Reduced Inequalities", "organization" : "Dalit Freedom Network Canada"},
+	{"name": "Sustainable Cities and Communities", "organization" : "sustainable.org"},
+	{"name": "Responsible Consumption and Production", "organization" : "Sustainable Electronics Recycling International"},
+	{"name": "Climate Action", "organization" : "Climate Parliament"},
+	{"name": "Life Below Water", "organization" : "MarineBio"},
+	{"name": "Life on Land", "organization" : "EcoLogic Development Fund"},
+	{"name": "Peace and Justice Strong Institutions", "organization" : "International Tribunal for the Law of the Sea"},
+	{"name": "Partnerships for the Goals", "organization" : "Earthville Network"}
+]
