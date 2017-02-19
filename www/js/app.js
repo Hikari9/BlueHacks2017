@@ -9,14 +9,20 @@ angular.module('bluehacks',
   ['ionic',
   'ngCordova',
   'ionic-letter-avatar',
+  'ionic-native-transitions',
   'bluehacks.backend',
   'bluehacks.aboutcontroller',
   'bluehacks.accountcontroller',
+  'bluehacks.goalcontroller',
   'bluehacks.homecontrollers',
   'bluehacks.sidemenucontrollers',
   'bluehacks.landingcontrollers',
   'bluehacks.registercontrollers'
   ])
+
+.service('DataService', function(){
+  return {data: {}}
+})
 
 .run(function($ionicPlatform, $cordovaSQLite) {
   $ionicPlatform.ready(function() {
@@ -98,6 +104,16 @@ angular.module('bluehacks',
     }
   })
 
+  .state('sidemenu.goal', {
+    url: '/goal',
+    views: {
+      'menuContent': {
+        templateUrl: 'app/goal/goal.html',
+        controller: 'GoalCtrl'
+      }
+    }
+  })
+
   .state('backend', {
     url: '/backend',
     templateUrl: 'app/backend/backend.html',
@@ -106,4 +122,21 @@ angular.module('bluehacks',
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/landing');
+})
+
+// Configures defaults provided by the Cordova Native Transitions plugin.
+.config(function($ionicNativeTransitionsProvider) {
+
+  var config = $ionicNativeTransitionsProvider;
+
+  // for a swifter user experience, decrease the duration (originally 400)
+  config.setDefaultOptions({
+    duration: 300
+  });
+
+  config.setDefaultBackTransition({
+    type: 'slide',
+    direction: 'right'
+  });
+
 });

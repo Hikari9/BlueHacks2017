@@ -49,7 +49,7 @@ gulp.task('serve:before', ['default']);
 
 // paths for injecting/watching
 var paths = {
-  sass: ['./scss/**/*.scss'],
+  sass: ['./www/scss/**/*.scss'],
   javascript: ['./www/app/**/*.js']
 };
 
@@ -84,7 +84,7 @@ gulp.task('watch', function() {
  * compilation into the console during 'ionic serve'.
  */
 gulp.task('sass', [], function(done) {
-  return gulp.src('./scss/ionic.app.scss')
+  return gulp.src('./www/scss/ionic.app.scss')
     .pipe(sourcemaps.init())
     .pipe(sass())
     .on('error', sass.logError)
