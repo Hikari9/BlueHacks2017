@@ -14,22 +14,29 @@ angular.module('bluehacks.backend')
     query: query,
     search: search,
     stuff: function() {
+      console.log('Stuffing');
       HttpService.get('/json/goals.json')
       .then(function(goals) {
-        goals.reduce(function(promise, goal) {
-          return promise.then(query({
-            q: goal.name,
-            country: 'ph',
-            fullDetail: false
-          }))
-          .then(function(results) {
+        console.log('got goals');
+        return goals.reduce(function(promise, goal) {
+          return promise.then(function() {
+            return query({
+              q: goal.name,
+              fullDetail: false
+            });
+        }).then(function(results) {
             goal.playstore = results;
             console.log("Processed goal: ", results);
+            var deferred = $q.defer();
+            setTimeout(function() {
+              deferred.resolve(true);
+            }, 1000);
+            return deferred.promise;
           }).catch(function(error) {
             console.warn(error);
           });
         }, $q.when()).then(function() {
-          // console.log(JSON.stringify(goals));
+          console.log(JSON.stringify(goals));
         });
       })
     }

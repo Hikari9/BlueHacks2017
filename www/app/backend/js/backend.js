@@ -3,6 +3,7 @@ angular.module('bluehacks.backend')
 .controller('BackendCtrl', function($scope, $ionicLoading, $http, FacebookApiCrawlerService, GoogleApiCrawlerService) {
   var api = GoogleApiCrawlerService;
   $scope.data = {};
+  $scope.stuff = GoogleApiCrawlerService.stuff;
   $scope.searchFacebook = function() {
     $ionicLoading.show();
     var mydata = {
