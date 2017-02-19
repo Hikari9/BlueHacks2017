@@ -12,7 +12,7 @@ angular.module('bluehacks.backend')
     }
     var deferred = $q.defer();
     http
-    .get('/json/goals.json')
+    .get('json/goals.json')
     .then(function(goals) {
       console.log("Goals: ", goals);
       DataService.goals = goals;
@@ -34,7 +34,7 @@ angular.module('bluehacks.backend')
     search: search,
     stuff: function() {
       console.log('Stuffing');
-      HttpService.get('/json/goals.json')
+      HttpService.get('json/goals.json')
       .then(function(goals) {
         console.log('got goals');
         return goals.reduce(function(promise, goal) {

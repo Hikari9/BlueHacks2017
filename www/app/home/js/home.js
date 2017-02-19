@@ -26,7 +26,7 @@ angular.module('bluehacks.homecontrollers', [])
       }
     };
   };
-  $http.get('/json/goals.json')
+  $http.get('json/goals.json')
   .then(function(results) {
     var goals = results.data;
     $scope.tiles = [];
