@@ -1,6 +1,6 @@
 angular.module('bluehacks.accountcontroller', [])
 
-    .controller('AccountCtrl', function ($scope, $stateParams, $ionicLoading) {
+    .controller('AccountCtrl', function ($scope, $stateParams, $ionicLoading, $cordovaSQLite, $ionicPlatform) {
 
         $scope.user = {}
 
@@ -12,21 +12,17 @@ angular.module('bluehacks.accountcontroller', [])
             });
             /*var firstname = localStorage.getItem("usr_firstname");
             var lastname = localStorage.getItem("usr_lastname");*/
-            var firstname = "Viktor Mikhael";
-            var lastname = "Dela Cruz";
-            $scope.firstname = firstname;
-            $scope.lastname = lastname;
-
             $ionicLoading.hide();
         }
-
-        var query = "SELECT * FROM user INNER JOIN current_user ON user.username = current_user.current_user";
-          $cordovaSQLite.execute(db, query).then(function(result){
+        $scope.$on('$ionicView.beforeEnter', function(){
+            var query = "SELECT * FROM user INNER JOIN current_user ON user.username = current_user.current_user";
+            $cordovaSQLite.execute(db, query).then(function(result){
             console.log("Current user: " + result.rows.item(0).username);
-            $scope.firstname = result.rows.item(0).firstname;
-            $scope.lastname = result.rows.item(0).lastname;
-            $scope.occupation = result.rows.item(0).occupation;
+            $scope.user.firstname = result.rows.item(0).firstname;
+            $scope.user.lastname = result.rows.item(0).lastname;
+            $scope.user.occupation = result.rows.item(0).occupation;
           }, function(error){
                   console.log(error);
-          })
+          }) 
+        })
     });
