@@ -1,14 +1,33 @@
 angular.module('bluehacks.backend')
 
-.service('GoogleApiCrawlerService', function($q, HttpService) {
+.service('GoogleApiCrawlerService', function($q, HttpService, DataService) {
   var baseUrl = "http://localhost:3000/api/apps/";
   var http = HttpService;
   function query(data) {
-    return http.get(baseUrl, data);
+    // find map in json file
+    if (DataService.goalsmap) {
+      var result = DataService.goalsmap[data.q];
+      console.log("Goals (cache): ", result);
+      return $q.when(result.playstore);
+    }
+    var deferred = $q.defer();
+    http
+    .get('/json/goals.json')
+    .then(function(goals) {
+      console.log("Goals: ", goals);
+      DataService.goals = goals;
+      var goalsmap = {};
+      angular.forEach(goals, function(goal) {
+        goalsmap[goal.name] = goal;
+      });
+      DataService.goalsmap = goalsmap;
+      deferred.resolve(goalsmap[data.q].playstore);
+    });
+    return deferred.promise;
   };
   function search(keywords) {
     console.log("Search: ", [baseUrl, keywords]);
-    return http.get(baseUrl, {q: keywords});
+    return query({q: keywords});
   };
   return {
     query: query,
