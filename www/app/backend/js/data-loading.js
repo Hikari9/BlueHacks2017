@@ -4,8 +4,6 @@ angular.module('bluehacks.backend')
 
 	function loadFbPages(model, resultsCollection) {
 		// TODO: async loading here to results
-    resultsCollection.push({});
-    return $q.when();
 	};
 
 	function loadKickstarterCharities(model, resultsCollection) {
@@ -39,11 +37,18 @@ angular.module('bluehacks.backend')
 	};
 
 	function loadCommunityFeats(model, resultsCollection) {
+		var totalprogress = 0;
+		var count = 0;
     return HttpService.get('/json/goals.json').then(function(results) {
       angular.forEach(results[model.index - 1].milestones, function(milestone, index) {
         console.log('Milestone (' + model.name + ')', milestone);
          milestone.index = index + 1;
+				 totalprogress += milestone.progress;
+				 count++;
+				 model.totalprogress = ~~(totalprogress/count*10)/10;
+
         resultsCollection.push(milestone);
+
 
       });
     });
