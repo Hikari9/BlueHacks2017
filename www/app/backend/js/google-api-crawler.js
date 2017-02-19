@@ -1,6 +1,6 @@
 angular.module('bluehacks.backend')
 
-.service('GoogleApiCrawlerService', function($q, HttpService, DataService) {
+.service('GoogleApiCrawlerService', function($q, HttpService, DataService, GOALS) {
   var baseUrl = "http://localhost:3000/api/apps/";
   var http = HttpService;
   function query(data) {
@@ -12,7 +12,7 @@ angular.module('bluehacks.backend')
     }
     var deferred = $q.defer();
     http
-    .get('/json/goals.json')
+    .get(GOALS.url())
     .then(function(goals) {
       console.log("Goals: ", goals);
       DataService.goals = goals;
@@ -34,7 +34,7 @@ angular.module('bluehacks.backend')
     search: search,
     stuff: function() {
       console.log('Stuffing');
-      HttpService.get('/json/goals.json')
+      HttpService.get(GOALS.url())
       .then(function(goals) {
         console.log('got goals');
         return goals.reduce(function(promise, goal) {

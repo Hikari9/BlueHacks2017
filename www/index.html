@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
     <title></title>
 
     <link rel="manifest" href="manifest.json">
@@ -15,7 +16,9 @@
           .catch(err => console.log('Error', err));
       }
     </script>-->
-
+    <script>
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fs) {console.log(fs);}, function() {});
+    </script>
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/app-compiled-scss.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">

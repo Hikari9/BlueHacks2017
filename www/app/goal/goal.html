@@ -32,7 +32,7 @@
 				</ion-tab>
           <ion-tab title="Charities" has-header>
             <ion-content class="item" padding="false" has-tabs>
-              List of kickstarter charities. Use ng-repeat in list.
+							Coming soon!
 							<ion-list class="list" ng-repeat="charity in tabs.kickstarterCharities">
 								<ion-item class="item card charity-item">
 								</ion-item>
@@ -66,9 +66,9 @@
           </ion-tab>
 					<ion-tab title="Community" has-header>
             <ion-content class="item" padding="false" has-tabs>
-							List of fb pages. Use ng-repzeat in list.
-							<ion-list class="list" ng-repeat="page in tabs.fbPages">
-								<ion-item>
+							<!-- <ion-list class="list" ng-repeat="page in tabs.fbPages"> -->
+								<ion-item class="item">
+									<a href="{{ encode(data.name) }}" target="__blank"><img src="img/HardCoded/{{ data.index }}.JPG" /></a>
 								</ion-item>
 							</ion-list>
             </ion-content>
