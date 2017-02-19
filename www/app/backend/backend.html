@@ -1,7 +1,9 @@
 <ion-view view-title="Backend">
   <ion-content padding="true">
     <input type="search" ng-model="data.keyword">
-    <ion-button class="button button-positive" ng-click="ctrl.search()">Search</ion-button>
+    <ion-button class="button button-balanced" ng-click="search()">Google Play Store</ion-button>
+    <ion-button class="button button-positive" ng-click="searchFacebook()">Facebook</ion-button>
+    <ion-button class="button button-calm" ng-click="stuff()">Stuff</ion-button>
     <div>
       {{ data.results || "Empty" }}
     </div>
