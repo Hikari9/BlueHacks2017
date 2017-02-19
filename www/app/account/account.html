@@ -3,19 +3,25 @@
     <div class="item item-text-wrap border-bottom account">
       <img id="profile-photo" ng-src="img/avatar-default.jpg" alt="Profile Picture">
       <!-- <img id="profile-photo" ng-src="{{user.avatar}}" alt="Profile Picture"> -->
-      <h3 id="font-head-large">{{firstname}} {{lastname}}</h3>
-      <p id="font-head-small">Programmer</p>
+      <h3 id="font-head-large">{{user.firstname}} {{user.lastname}}</h3>
+      <p id="font-head-small">{{user.occupation}}</p>
     </div>
     <i class="item">
       First Name
       <span class="item-note">
-        {{firstname}}
+        {{user.firstname}}
       </span>
     </i>
     <i class="item">
       Last Name
       <span class="item-note">
-        {{lastname}}
+        {{user.lastname}}
+      </span>
+    </i>
+    <i class="item">
+      Occupation
+      <span class="item-note">
+        {{user.occupation}}
       </span>
     </i>
   </ion-content>

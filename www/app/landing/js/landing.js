@@ -6,8 +6,7 @@ angular.module('bluehacks.landingcontrollers', [])
 
 	$scope.login = function(){
     $state.go('sidemenu.home');
-		/*console.log("CLICKED LOGIN!");
-		var query = "SELECT * FROM user WHERE username = ? AND password = ?"; //caution when using * if you want to be specific
+		var query = "SELECT * FROM user WHERE username = ? AND password = ?";
       $cordovaSQLite.execute(db, query, [$scope.data.username, $scope.data.password]).then(function(result){
           if(result.rows.length > 0){
             var query2 = "DELETE FROM current_user";
@@ -18,7 +17,6 @@ angular.module('bluehacks.landingcontrollers', [])
             var alertPopup = $ionicPopup.alert({
               title: 'Welcome, ' + result.rows.item(0).username
             });
-            $state.go('landing');
           } else{
             console.log("NO ROWS EXIST"); 
             var alertPopup = $ionicPopup.alert({
@@ -27,11 +25,10 @@ angular.module('bluehacks.landingcontrollers', [])
           }
       }, function(error){
           console.log(error);
-     })*/
+     })
 	}
 
 	$scope.register = function(){
-		console.log("clicked");
 		$state.go('register');
 	}
 
