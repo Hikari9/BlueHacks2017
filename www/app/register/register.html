@@ -1,19 +1,25 @@
 <ion-view id="register-view" view-title="Register New User">
-  <ion-nav-bar class="bar-calm">
+  <!-- <ion-nav-bar class="bar-calm" style="background: rgba(255,255,255,.10);">
     <ion-nav-back-button>
     </ion-nav-back-button>
     <ion-nav-buttons side="left">
     </ion-nav-buttons>
-  </ion-nav-bar>
+  </ion-nav-bar> -->
   <ion-content padding="false" scroll="false" has-header>
     <div class="landing-page-content">
       <div class="landing-page-row">
+
+        <img class="item image" src="img/Goals.png" alt="Profile Picture" style="background: none; border: none;">
+        <div id="sub-title-reg">
+          <h1 id="sub-title-reg-real">Be part of building a sustainable world!</h1>
+        </div>
         <div class="list list-inset" style="border-radius:5px; padding: 0;">
           <!-- <img class="item item-calm image" src="img/avatar-default.jpg" alt="Profile Picture"> -->
-          <img class="item item-calm image" src="img/Goals.png" alt="Profile Picture">
-          <label id="be-part" class="item item-block item-calm">
+
+          <!-- <label id="be-part" class="item">
             Be part of building a sustainable world!
-          </label>
+          </label> -->
+
           <label id="be-part" class="item item-input">
              <input type="text" placeholder="Username" ng-model="data.username">
           </label>

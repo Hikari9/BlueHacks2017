@@ -1,4 +1,4 @@
-<ion-view view-title="Goal: {{ data.name }}">
+<ion-view title="Goal">
 
 			<ion-item class="item-thumbnail-left item item-stable item-with-margin">
 				<img src={{data.url}}>
@@ -52,7 +52,7 @@
 
             <ion-content class="item" padding="false" has-tabs>
 							<div class="circular-progress">
-								<div class="percent-circular">41%</div>
+								<div class="percent-circular">{{ data.totalprogress }}%</div>
 							</div>
               <!-- List of community feats. Use ng-repeat in list. -->
 							<ion-list class="list" ng-repeat="feat in tabs.communityFeats">

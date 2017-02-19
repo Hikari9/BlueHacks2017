@@ -62,6 +62,16 @@ h1 {
   text-transform: uppercase;
 }
 
+#sub-title-reg {
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#sub-title-reg-real {
+  color: white;
+}
+
 .current-description {
   display:inline-block;
   text-align: center;

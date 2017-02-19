@@ -7,7 +7,7 @@ angular.module('bluehacks.homecontrollers', [])
   function createTile(index) {
     return {
       url: '../img/' + index + '.png',
-      index: index,
+      index: index, totalprogress: 0,
       getClass: function() {
         return "tile-show";
       },
