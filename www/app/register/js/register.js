@@ -1,5 +1,5 @@
 angular.module('bluehacks.registercontrollers', [])
-.controller('RegisterCtrl', function($scope, $cordovaSQLite, $ionicPopup, $ionicHistory) {
+.controller('RegisterCtrl', function($scope, $cordovaSQLite, $ionicPopup, $ionicHistory, $state) {
 
 	$scope.data = {};
 
@@ -25,12 +25,12 @@ angular.module('bluehacks.registercontrollers', [])
 						});
             $ionicHistory.clearCache();
       }, function(error){
-        alert(error);
+        alert("Error!", error);
         console.log(error);
       })
         }
       }, function(error){
-        alert(error);
+        alert("Error!", error);
         console.log(error);
       });
 	}
