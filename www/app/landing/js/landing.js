@@ -17,16 +17,17 @@ angular.module('bluehacks.landingcontrollers', [])
             var alertPopup = $ionicPopup.alert({
               title: 'Welcome, ' + result.rows.item(0).username
             });
-            $ionicLoading.hide();
             $state.go('sidemenu.home');
           } else{
-            console.log("NO ROWS EXIST"); 
+            console.log("NO ROWS EXIST");
             var alertPopup = $ionicPopup.alert({
               title: 'User does not exist'
             });
           }
+					$ionicLoading.hide();
       }, function(error){
           console.log(error);
+					$ionicLoading.hide();
      })
 	}
 

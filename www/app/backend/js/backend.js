@@ -1,8 +1,24 @@
 angular.module('bluehacks.backend')
 
-.controller('BackendCtrl', function($scope, $ionicLoading, $http, GoogleApiCrawlerService) {
+.controller('BackendCtrl', function($scope, $ionicLoading, $http, FacebookApiCrawlerService, GoogleApiCrawlerService) {
   var api = GoogleApiCrawlerService;
   $scope.data = {};
+  $scope.stuff = GoogleApiCrawlerService.stuff;
+  $scope.searchFacebook = function() {
+    $ionicLoading.show();
+    var mydata = {
+      q: $scope.data.keyword,
+      type: 'topic'
+    };
+    FacebookApiCrawlerService.query(mydata)
+    .then(function(results) {
+      console.log('Facebook', results);
+    })
+    .catch(function(error) {
+      console.warn(error);
+    })
+    .finally($ionicLoading.hide);
+  };
   $scope.search = function() {
     $ionicLoading.show();
     var mydata = {

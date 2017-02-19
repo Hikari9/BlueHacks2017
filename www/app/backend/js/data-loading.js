@@ -18,7 +18,8 @@ angular.module('bluehacks.backend')
     }).then(function(response) {
       // note: there will only be 20 results
       var results = response.results;
-      angular.forEach(response.results, function(app) {
+      console.log("Response", response);
+      angular.forEach(results, function(app) {
         var data = {
           id: app.appId,
           url: app.playstoreUrl,
@@ -28,6 +29,7 @@ angular.module('bluehacks.backend')
           summary: app.summary,
           score: app.score
         };
+        angular.extend(data, app);
         resultsCollection.push(data);
         console.log("Received google store app", data);
       });
