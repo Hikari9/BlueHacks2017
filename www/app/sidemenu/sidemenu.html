@@ -16,12 +16,13 @@
     <ion-content class="darkSide">
     <h1 class="title"> <img ng-src="img/Goals.png" style="width: 100%"></h1>
       <ion-item nav-clear menu-close href="#/app/account" class="item-avatar">
-      <ionic-letter-avatar data="Viktor" shape="round" charcount="2"></ionic-letter-avatar>
-      <h4 class="text-light">Viktor Dela Cruz <br>viktormdelacruz</h4>
-      <h5 class="text-light">Programmer</h5></ion-item>
+      <ionic-letter-avatar data="{{user.firstname}}" shape="round" charcount="2"></ionic-letter-avatar>
+      <h4 class="text-light">{{user.firstname}} {{user.lastname}} <br>{{user.username}}</h4>
+      <h5 class="text-light">{{user.occupation}}</h5></ion-item>
       <ion-item nav-clear menu-close ui-sref="sidemenu.home" class="item-icon item-icon-left"><i class="icon ion-aperture"></i> Goals</ion-item>
       <ion-item nav-clear menu-close ui-sref="sidemenu.account" class="item-icon item-icon-left"><i class="icon ion-android-person"></i> My Account</ion-item>
       <ion-item nav-clear menu-close ui-sref="sidemenu.about" class="item-icon item-icon-left"><i class="icon ion-android-bulb"></i> About the App</ion-item>
+      <ion-item nav-clear menu-close ui-sref="landing" class="item-icon item-icon-left"><i class="icon ion-log-out"></i> Sign Out</ion-item>
     </ion-content>
   </ion-side-menu>
 </ion-side-menus>

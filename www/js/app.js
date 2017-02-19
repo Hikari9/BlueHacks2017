@@ -32,22 +32,23 @@ angular.module('bluehacks',
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
 
-      //COMMAND TO DELETE DATABASE
+    //COMMAND TO DELETE DATABASE
     //window.sqlitePlugin.deleteDatabase({name: 'ebtracker.db', location: 'default'});
 
     //OPEN DATABASE
-    //db = window.sqlitePlugin.openDatabase({name: 'bluehacks.db', location: 'default'});
+    db = window.sqlitePlugin.openDatabase({name: 'bluehacks.db', location: 'default'});
 
     //DROP TABLES
     //ebtrackerdb.executeSql('DROP TABLE IF EXISTS user'); //flush table data
 
     //CREATE TABLES
-    //$cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS user (id integer primary key autoincrement, username text, password text)");
-
+    $cordovaSQLite.execute(db, "CREATE TABLE IF NOT EXISTS user (id integer primary key autoincrement, username text, password text, firstname text, lastname text, occupation text)");
+    $cordovaSQLite.execute(ebtrackerdb, "CREATE TABLE IF NOT EXISTS current_user (id integer primary key autoincrement, current_user text)");
     }
+    ionic.Platform.fullScreen();
     if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
+      return StatusBar.hide();
     }
   });
 })

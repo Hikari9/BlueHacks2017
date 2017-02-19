@@ -4,7 +4,6 @@ angular.module('bluehacks.registercontrollers', [])
 	$scope.data = {};
 
 	$scope.register = function(){
-    console.log("SHOW ME THAT YOU LIVE")
 		var query1 = "SELECT username FROM user WHERE username = ?";
       $cordovaSQLite.execute(db, query1, [$scope.data.username]).then(function(result){
         if(result.rows.length >= 1){
@@ -13,8 +12,8 @@ angular.module('bluehacks.registercontrollers', [])
               title: 'User already exists. Pick another username',
           });
         } else{
-            var query2 = "INSERT INTO user (username, password) VALUES (?, ?)";
-            $cordovaSQLite.execute(db, query2, [$scope.data.username, $scope.data.password]).then(function(result){
+            var query2 = "INSERT INTO user (username, password, firstname, lastname, occupation) VALUES (?, ?, ?, ?, ?)";
+            $cordovaSQLite.execute(db, query2, [$scope.data.username, $scope.data.password, $scope.data.firstname, $scope.data.lastname, $scope.data.occupation]).then(function(result){
             console.log("Rows affected: " + result.rowsAffected);
             console.log($scope.data.username + " " + $scope.data.password);
             $ionicPopup.alert({
