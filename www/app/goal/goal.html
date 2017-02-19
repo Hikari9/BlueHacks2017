@@ -18,7 +18,7 @@
             <ion-content class="item" padding="false" has-tabs>
               List of kickstarter charities. Use ng-repeat in list.
 							<ion-list class="list" ng-repeat="charity in tabs.kickstarterCharities">
-								<ion-item>
+								<ion-item class="item card charity-item">
 								</ion-item>
 							</ion-list>
             </ion-content>
@@ -52,8 +52,12 @@
             <ion-content class="item" padding="false" has-tabs>
               List of community feats. Use ng-repeat in list.
 							<ion-list class="list" ng-repeat="feat in tabs.communityFeats">
-								<ion-item>
-								</ion-item>
+									<div class="row feat-row">
+										<b class="feat-label col col-20">{{ feat.index }}</b>
+										<div class="feat-description col col-80">
+											{{ feat.description }}
+										</div>
+									</div>
 							</ion-list>
             </ion-content>
           </ion-tab>
