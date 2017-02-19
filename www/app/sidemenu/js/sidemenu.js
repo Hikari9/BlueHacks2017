@@ -1,6 +1,6 @@
 angular.module('bluehacks.sidemenucontrollers', [])
 
-.controller('SideMenuCtrl', function($scope, $cordovaSQLite, $ionicActionSheet, $ionicHistory,) {
+.controller('SideMenuCtrl', function($scope, $cordovaSQLite, $ionicActionSheet, $ionicHistory) {
 	$scope.user = {};
 
 	var query = "SELECT user.firstname FROM user INNER JOIN current_user ON user.username = current_user.current_user";
