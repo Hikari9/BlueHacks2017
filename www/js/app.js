@@ -37,7 +37,7 @@ angular.module('bluehacks',
     }
     else{
       //OPEN DATABASE FOR WEB
-      db = (window.openDatabase('bluehacks.db', '1.0', 'bluehacks', -1));
+    db = (window.openDatabase('bluehacks.db', '1.0', 'bluehacks', -1));
     }
 
     //COMMAND TO DELETE DATABASE
